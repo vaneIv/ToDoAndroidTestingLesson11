@@ -24,7 +24,7 @@ class FakeAndroidTestRepository : TasksRepository {
 
     override fun observeTasks(): LiveData<Result<List<Task>>> {
         runBlocking { refreshTasks() }
-        return observeTasks()
+        return observableTasks
     }
 
     override suspend fun refreshTask(taskId: String) {
